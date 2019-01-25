@@ -10,7 +10,7 @@ get '/juego' do
 	@@zombie = ZombieDice.new
 	@vidas = @@zombie.vidas
 	@cerebros = @@zombie.cerebros
-	@es_activo = true
+	@es_activo = @@zombie.es_activo
 	erb :juego
 end
 
@@ -18,7 +18,7 @@ post '/juego' do
 	@resultado = @@zombie.tirar_dado
 	@vidas = @@zombie.vidas
 	@cerebros = @@zombie.cerebros
-	@es_activo = true
-	@resultado_juego = ""
+	@es_activo = @@zombie.es_activo
+	@resultado_juego = @@zombie.resultado_juego
 	erb :juego
 end
