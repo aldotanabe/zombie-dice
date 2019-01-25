@@ -8,6 +8,6 @@ get '/' do
 end
 
 post '/' do
-	@resultado = @@zombie.tirar_dado
+	@resultado = @@zombie.traducir(@@zombie.tirar_dado)
 	erb :home	
 end
