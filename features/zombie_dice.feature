@@ -8,6 +8,7 @@ Scenario:
 	Given voy a la página del juego
 	Then veo el boton "Tirar dados"
 	And tengo 3 vidas
+	And tengo 0 cerebros
 
 Scenario:
 	Given voy a la página del juego
@@ -18,5 +19,10 @@ Scenario:
 	Given voy a la página del juego
 	When doy click en "Tirar dados"
 	Then veo un ícono asociado al resultado
+	
+#Scenario:
+	#Given voy a la página del juego
+	
+	
 	
 
