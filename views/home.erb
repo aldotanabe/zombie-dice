@@ -1,0 +1,8 @@
+<form method="post" action="/">
+<input type="submit" value="Tirar dados" />
+</form>
+<% if @resultado %>
+<div class="resultado">
+<span>El resultado es: </span><span class="valor"><%= @resultado %></span>
+</div>
+<% end %>

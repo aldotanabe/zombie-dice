@@ -1,4 +1,4 @@
-require "./lib/zombie-dice.rb"
+require "./lib/zombie_dice.rb"
 
 describe "Juego Zombie Dice" do
 	it "tirar dado y retorna un valor de 1 a 6" do
