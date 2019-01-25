@@ -49,5 +49,29 @@ describe "Juego Zombie Dice" do
 		
 		expect(zombie.vidas).to eq 3 
 	end
+	
+	it "calcular cerebros al sacar una bala" do
+		zombie = ZombieDice.new
+		indice_bala = 4
+		zombie.tirar_dado(indice_bala)  
+		
+		expect(zombie.cerebros).to eq 0  
+	end
+	
+	it "calcular cerebros al sacar un cerebro" do
+		zombie = ZombieDice.new
+		indice_bala = 2
+		zombie.tirar_dado(indice_bala) 
+		
+		expect(zombie.cerebros).to eq 1
+	end
+	
+	it "calcular cerebros al sacar una huellita" do
+		zombie = ZombieDice.new
+		indice_bala = 3
+		zombie.tirar_dado(indice_bala) 
+		
+		expect(zombie.cerebros).to eq 0 
+	end
 	 
 end

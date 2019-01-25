@@ -1,20 +1,21 @@
 class ZombieDice
 	def initialize
 		@vidas = 3
-		@balas = 0
+		@cerebros = 0
 	end
 
 	def vidas
 		return @vidas
 	end
-	def balas
-		return @balas
+	def cerebros
+		return @cerebros
 	end
  
   def tirar_dado valor_mock = 0
-     valor =  valor_mock == 0 ? obtener_valor_dado : valor_mock      
-     contar_balas(valor)
-     return traducir(valor)
+     valor_dado =  valor_mock == 0 ? obtener_valor_dado : valor_mock      
+     contar_vidas(valor_dado)
+     contar_cerebros(valor_dado)
+     return traducir(valor_dado)
   end
  
 	def obtener_valor_dado
@@ -22,15 +23,22 @@ class ZombieDice
 		return random.rand(1..6) 
 	end
 	
-	def contar_balas dado
-	  if dado == 4 || dado == 1
+	def contar_vidas valor_dado
+	  if valor_dado == 4 || valor_dado == 1
 			@vidas -= 1
 		end 
 	end
+	
+	
+	def contar_cerebros valor_dado
+	  if valor_dado == 2 || valor_dado == 5
+			@cerebros += 1
+		end 
+	end
 	 
-	def traducir valor
+	def traducir valor_dado
 	 resultados = ['bala', 'cerebro', 'huellita', 'bala', 'cerebro', 'huellita']  
-	 return resultados[valor -1] 		
+	 return resultados[valor_dado -1] 		
 	end
 	 
 end
