@@ -13,8 +13,7 @@ class ZombieDice
  
   def tirar_dado valor_mock = 0
      valor =  valor_mock == 0 ? obtener_valor_dado : valor_mock      
-     contarBalas(valor)
-     calcular_vida
+     contar_balas(valor)
      return traducir(valor)
   end
  
@@ -23,20 +22,15 @@ class ZombieDice
 		return random.rand(1..6) 
 	end
 	
-	def contarBalas dado
+	def contar_balas dado
 	  if dado == 4 || dado == 1
-			@balas += 1
+			@vidas -= 1
 		end 
 	end
 	 
 	def traducir valor
 	 resultados = ['bala', 'cerebro', 'huellita', 'bala', 'cerebro', 'huellita']  
 	 return resultados[valor -1] 		
-	end
-	
-	def calcular_vida
-		@vidas = @vidas - @balas
-		return @vidas
 	end
 	 
 end

@@ -7,6 +7,7 @@ Scenario:
 Scenario: 
 	Given voy a la página del juego
 	Then veo el boton "Tirar dados"
+	And tengo 3 vidas
 
 Scenario:
 	Given voy a la página del juego

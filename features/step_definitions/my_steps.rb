@@ -16,6 +16,13 @@ Then(/^veo el boton "(.*?)"$/) do |boton|
   last_response.should have_xpath("//input[@value=\"#{boton}\"]")
 end
 
+Then(/^tengo (\d+) vidas$/) do |vidas|
+  #last_response.should have_xpath("//dd[@class=\"vidas\"]") do |dd|
+  	#dd.should has_content "3"
+  #end
+  last_response.body.should =~ /3/m 
+end
+
 
 When(/^doy click en "(.*?)"$/) do |boton|
   click_button(boton)
