@@ -11,8 +11,8 @@ class ZombieDice
 		return @balas
 	end
  
-  def tirar_dado valor_mock 
-     valor =  valor_mock == nil ? obtener_valor_dado : valor_mock      
+  def tirar_dado valor_mock = 0
+     valor =  valor_mock == 0 ? obtener_valor_dado : valor_mock      
      contarBalas(valor)
      calcular_vida
      return traducir(valor)
