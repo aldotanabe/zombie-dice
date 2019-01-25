@@ -6,6 +6,9 @@ class ZombieDice
 		@cerebros = 0
 		@es_activo = true
 		@cantidad_cerebros = 5
+		@mensajes = {"bala" => "Has recibibo una bala...auch. Tu resistencia disminuye en 1",
+		            "huellita" => "Uy...se te escapo el humano",
+		            "cerebro" => "Te has comido un cerebro...yummy"}
 	end
 
 	def resistencia
@@ -59,8 +62,9 @@ class ZombieDice
 			@cerebros += 1
 		end 
 	end
-
-	def traer_mensaje 
-	  @cerebros == @cantidad_cerebros 
-	end 
+ 	
+	def resultado_tiro tiro
+	  return @mensajes[tiro]
+	end
+	 
 end
