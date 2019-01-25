@@ -1,13 +1,13 @@
 class ZombieDice
 	def initialize
-		@vidas = 3
+		@resistencia = 3
 		@cerebros = 0
 		@es_activo = true
 		@cantidad_cerebros = 5
 	end
 
-	def vidas
-		return @vidas
+	def resistencia
+		return @resistencia
 	end
 	
 	def cerebros
@@ -24,7 +24,7 @@ class ZombieDice
  
   def tirar_dado valor_mock = 0
      valor_dado =  valor_mock == 0 ? obtener_valor_dado : valor_mock      
-     contar_vidas(valor_dado)
+     contar_resistencia(valor_dado)
      contar_cerebros(valor_dado)
      actualizar_estado
      return traducir(valor_dado)
@@ -35,16 +35,16 @@ class ZombieDice
 		return random.rand(1..6) 
 	end
 	
-	def contar_vidas valor_dado
+	def contar_resistencia valor_dado
 	  if valor_dado == 4 || valor_dado == 1
-			@vidas -= 1
+			@resistencia -= 1
 		end 
 	end
 	 
 	def actualizar_estado
-	  if @vidas == 0 || @cerebros == @cantidad_cerebros
+	  if @resistencia == 0 || @cerebros == @cantidad_cerebros
 			 @es_activo = false
-			 @resultado_juego = (@vidas == 0) ? "Perdiste" : "Ganaste"
+			 @resultado_juego = (@resistencia == 0) ? "Perdiste" : "Ganaste"
 		end						 
 	end
 	

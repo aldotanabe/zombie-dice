@@ -7,7 +7,7 @@ Scenario:
 Scenario: 
 	Given voy a la página del juego
 	Then veo el boton "Tirar dados"
-	And tengo 3 vidas
+	And tengo 3 resistencia
 	And tengo 0 cerebros
 
 Scenario:

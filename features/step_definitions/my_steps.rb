@@ -16,11 +16,11 @@ Then(/^veo el boton "(.*?)"$/) do |boton|
   last_response.should have_xpath("//input[@value=\"#{boton}\"]")
 end
 
-Then(/^tengo 3 vidas$/) do
-  #last_response.should have_xpath("//dd[@class=\"vidas\"]") do |dd|
+Then(/^tengo 3 resistencia$/) do
+  #last_response.should have_xpath("//dd[@class=\"resistencia\"]") do |dd|
   	#dd.should has_content "3"
   #end
-  last_response.body.should =~ /3 vidas/m 
+  last_response.body.should =~ /3 resistencia/m 
 end
 
 Then(/^tengo 0 cerebros$/) do

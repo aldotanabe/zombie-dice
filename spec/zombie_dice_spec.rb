@@ -1,10 +1,10 @@
 require "./lib/zombie_dice.rb"
 
 describe "Juego Zombie Dice" do
-  it "al iniciar tienes 3 vidas" do
+  it "al iniciar tienes 3 resistencia" do
 		zombie = ZombieDice.new
 		
-		resultado = zombie.vidas
+		resultado = zombie.resistencia
 		
 		expect(resultado).to eq 3
 	end
@@ -39,7 +39,7 @@ describe "Juego Zombie Dice" do
 		indice_bala = 4
 		zombie.tirar_dado(indice_bala)  
 		
-		expect(zombie.vidas).to eq 2  
+		expect(zombie.resistencia).to eq 2  
 	end
 	
 	it "calcular vida al sacar un cerebro" do
@@ -47,7 +47,7 @@ describe "Juego Zombie Dice" do
 		indice_cerebro = 2
 		zombie.tirar_dado(indice_cerebro) 
 		
-		expect(zombie.vidas).to eq 3
+		expect(zombie.resistencia).to eq 3
 	end
 	
 	it "calcular vida al sacar una huellita" do
@@ -55,7 +55,7 @@ describe "Juego Zombie Dice" do
 		indice_huellita = 3
 		zombie.tirar_dado(indice_huellita) 
 		
-		expect(zombie.vidas).to eq 3 
+		expect(zombie.resistencia).to eq 3 
 	end
 	
 	it "calcular cerebros al sacar una bala" do
@@ -82,7 +82,7 @@ describe "Juego Zombie Dice" do
 		expect(zombie.cerebros).to eq 0 
 	end
 	 
-	it "al llegar a 0 vidas esta inactivo" do
+	it "al llegar a 0 resistencia esta inactivo" do
 		zombie = ZombieDice.new
 		indice_bala = 1
 		zombie.tirar_dado(indice_bala) 
