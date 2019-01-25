@@ -1,5 +1,9 @@
 <form action="/juego" method="post">
+
+<% if @es_activo %>
 <input type="submit" value="Tirar dados" />
+<% end %>
+
 </form>
 <% if @resultado %>
 <div class="resultado">
@@ -17,3 +21,9 @@
 	<dd class="cerebros"><%= @cerebros %> cerebros</dd>
 </dl>
 </div>
+
+<% if !@es_activo %>
+<div class="resultado-juego">
+	<h2><%= @resultado_juego %></h2>
+</div>
+<% end %>
