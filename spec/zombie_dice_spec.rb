@@ -9,10 +9,10 @@ describe "Juego Zombie Dice" do
 		expect(resultado).to eq 3
 	end
 	
-	it "tirar dado y retorna un valor de 1 a 6" do
+	it "obtener valor del dado y retorna un valor de 1 a 6" do
 		zombie = ZombieDice.new
 		
-		resultado = zombie.tirar_dado
+		resultado = zombie.obtener_valor_dado
 		
 		expect(resultado).to be > 0
 		expect(resultado).to be < 7	
@@ -23,32 +23,31 @@ describe "Juego Zombie Dice" do
 		
 		resultado = zombie.traducir 4
 		
-		expect(resultado).to eq  "Bala"
+		expect(resultado).to eq  "bala"
 	end
 	
-	#it "calcular vida al sacar una bala" do
-		#zombie = ZombieDice.new
+	it "calcular vida al sacar una bala" do
+		zombie = ZombieDice.new
+		indice_bala = 4
+		zombie.tirar_dado(indice_bala)  
 		
-		#resultado = zombie.calcular_vida
-		
-		#expect(resultado).to eq 2 
-	#end
+		expect(zombie.vidas).to eq 2  
+	end
 	
-	#it "calcular vida al sacar una huellita" do
-		#zombie = ZombieDice.new
+	it "calcular vida al sacar un cerebro" do
+		zombie = ZombieDice.new
+		indice_bala = 2
+		zombie.tirar_dado(indice_bala) 
 		
-		#resultado = zombie.calcular_vida
-		
-		#expect(resultado).to eq 3 
-	#end
+		expect(zombie.vidas).to eq 3
+	end
 	
-	#it "calcular vida al sacar un cerebro" do
-		#zombie = ZombieDice.new
+	it "calcular vida al sacar una huellita" do
+		zombie = ZombieDice.new
+		indice_bala = 3
+		zombie.tirar_dado(indice_bala) 
 		
-		#resultado = zombie.calcular_vida
-		
-		#expect(resultado).to eq 3
-	#end
-	
-	
+		expect(zombie.vidas).to eq 3 
+	end
+	 
 end
