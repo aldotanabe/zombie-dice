@@ -8,4 +8,9 @@ Scenario:
 	Given voy a la página del juego
 	When doy click en "Tirar dados"
 	Then el resultado se muestra
+	
+Scenario:
+	Given voy a la página del juego
+	When doy click en "Tirar dados"
+	Then veo un ícono asociado al resultado
 

@@ -14,9 +14,11 @@ When(/^doy click en "(.*?)"$/) do |boton|
 end
 
 Then(/^el resultado se muestra$/) do
-  #last_response.should have_xpath( "//span[@class=\"valor\"]") do |span|
-  #  span.text.should be != "0"
-  #end
-  last_response.should have_xpath("//span[@class=\"valor\"]")
+  last_response.should have_xpath("//div[@class=\"resultado\"]")
 end
+
+Then(/^veo un ícono asociado al resultado$/) do
+  last_response.should have_xpath("//img[@class=\"icono\"]")
+end
+
 
