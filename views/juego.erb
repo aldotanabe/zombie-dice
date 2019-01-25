@@ -1,29 +1,58 @@
-<form action="/juego" method="post">
+<!doctype html>
+<html class="no-js" lang="">
 
-<% if @es_activo %>
-<input type="submit" value="Tirar dados" />
-<% end %>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-</form>
-<% if @resultado %>
-<div class="resultado">
-<span>El resultado es: </span><span class="valor"><%= @resultado %></span> <br>
-<img class="icono" src="<%= "images/#{@resultado}.png" %>">
-</div>
-<% end %>
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
 
-<div class="puntaje">
-<dl>
-	<dt>Tus vidas: </dt>
-	<dd class="resistencia"><%= @resistencia %> resistencia</dd>
-	
-	<dt>Tus cerebros: </dt>
-	<dd class="cerebros"><%= @cerebros %> cerebros</dd>
-</dl>
-</div>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
 
-<% if !@es_activo %>
-<div class="resultado-juego">
-	<h2><%= @resultado_juego %></h2>
-</div>
-<% end %>
+<body>
+	<div class="juego-container">
+		<form action="/juego" method="post">
+
+		<% if @es_activo %>
+		<input type="submit" value="Tirar dados" class="btn-tirar-dados"/>
+		<% end %>
+
+		</form>
+		<% if @resultado %>
+		<div class="resultado">
+			<img class="icono" src="<%= "images/#{@resultado}.png" %>">
+		</div>
+		<% end %>
+
+		<div class="puntaje">
+		
+		<div class="resistencia-container">
+			<div class="resistencia-puntos" style="width:<%= @resistencia * 33 + 1%>%">
+			</div>
+			<div class="resistencia-contador">
+				<%= @resistencia %> / 3 de resistencia
+			</div>
+		</div>
+		
+		<div class="cerebros-container">
+			<div class="cerebros-puntos" style="width:<%= @cerebros * 20%>%">
+			</div>
+			<div class="cerebros-contador">
+				<%= @cerebros %> / 5 cerebros
+			</div>
+		</div>
+
+		<% if !@es_activo %>
+		<div class="resultado-juego">
+			<h2><%= @resultado_juego %></h2>
+		</div>
+		<% end %>
+	</div>
+</body>

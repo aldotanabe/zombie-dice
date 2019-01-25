@@ -287,7 +287,7 @@ textarea {
 }
 
 
-body {	
+body.home {	
 	max-width: 1000px;
 	margin: 0px auto;
 	text-align: center;
@@ -327,3 +327,62 @@ body {
 	color: white;
 }
 
+
+.juego-container {
+	max-width: 1000px;
+	margin: 0px auto;
+}
+
+.resultado {
+	min-height: 170px;
+	text-align: center;
+	margin-top: 30px;
+}
+.btn-tirar-dados {
+	width: 40%;
+	height: 50px;
+	background-color: #666;
+	color: white;
+	border-radius: 20px;
+	margin: 20px auto;
+	display: block;
+}
+
+.resistencia-container {
+	width: 100%;
+	height: 30px;
+	border: 2px solid green;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.resistencia-puntos {
+	height: 30px;
+	background-color: green;
+}
+
+.resistencia-contador {
+	position: absolute;
+	top: 0;
+	right: -160px;
+	color: green;
+}
+
+.cerebros-container {
+	width: 100%;
+	height: 30px;
+	border: 2px solid #f2abba;
+	position: relative;
+}
+
+.cerebros-puntos {
+	height: 30px;
+	background-color: #f2abba;
+}
+
+.cerebros-contador {
+	position: absolute;
+	top: 0;
+	right: -120px;
+	color: #f2abba;
+}

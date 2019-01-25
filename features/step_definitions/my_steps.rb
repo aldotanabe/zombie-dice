@@ -20,11 +20,11 @@ Then(/^tengo 3 resistencia$/) do
   #last_response.should have_xpath("//dd[@class=\"resistencia\"]") do |dd|
   	#dd.should has_content "3"
   #end
-  last_response.body.should =~ /3 resistencia/m 
+  last_response.body.should =~ /3 \/ 3 de resistencia/m 
 end
 
 Then(/^tengo 0 cerebros$/) do
-  last_response.body.should =~ /0 cerebros/m 
+  last_response.body.should =~ /0 \/ 5 cerebros/m 
 end
 
 When(/^doy click en "(.*?)"$/) do |boton|
