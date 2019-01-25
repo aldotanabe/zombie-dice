@@ -20,5 +20,6 @@ post '/juego' do
 	@cerebros = @@zombie.cerebros
 	@es_activo = @@zombie.es_activo
 	@resultado_juego = @@zombie.resultado_juego
+	@resultado_tiro = @@zombie.resultado_tiro(@resultado)
 	erb :juego
 end

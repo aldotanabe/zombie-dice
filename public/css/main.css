@@ -338,6 +338,10 @@ body.home {
 	text-align: center;
 	margin-top: 30px;
 }
+
+.resultado-mensaje {
+	margin-top: 10px;
+}
 .btn-tirar-dados {
 	width: 40%;
 	height: 50px;
@@ -346,6 +350,11 @@ body.home {
 	border-radius: 20px;
 	margin: 20px auto;
 	display: block;
+	cursor: pointer;
+}
+
+.btn-tirar-dados:hover {
+	background-color: #bbb;
 }
 
 .resistencia-container {
