@@ -1,7 +1,15 @@
 #Home
+Given(/^voy a la página de inicio$/) do
+  visit '/'
+end
+
+Then(/^veo el link "(.*?)"$/) do |arg1|
+  last_response.should have_xpath("//a[@class=\"empezar\"]")
+end
+
 
 Given(/^voy a la página del juego$/) do
-  visit '/'
+  visit '/juego'
 end
 
 Then(/^veo el boton "(.*?)"$/) do |boton|
