@@ -13,9 +13,12 @@ class Dado
 	 return @stack_dados[@tipo_dado]
 	end
 
-	def obtener_valor
-		random = Random.new 
-		return random.rand(1..6) 
+	def obtener_valor valor_mock = 0
+	  if valor_mock == 0
+	    random = Random.new 
+		  return random.rand(1..6)
+	  end
+		return valor_mock
 	end
 	
 	def traducir numero

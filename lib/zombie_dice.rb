@@ -6,6 +6,7 @@ class ZombieDice
 		@cerebros = 0
 		@es_activo = true
 		@cantidad_cerebros = 5
+		@resultado_dados = []
 		@mensajes = {"bala" => "Has recibibo una bala...auch. Tu resistencia disminuye en 1",
 		            "huellita" => "Uy...se te escapo el humano",
 		            "cerebro" => "Te has comido un cerebro...yummy"}
@@ -27,22 +28,25 @@ class ZombieDice
 	  return @resultado_juego
 	end  
  
-  def tirar_dado valor_mock = 0
-  	dado = obtener_dados
-    valor_dado =  valor_mock == 0 ? obtener_valor_dado(dado) : valor_mock      
+  def tirar_dados valor_mock = 0
+  	dados = obtener_dados
+    dados.each do |dado|
+      @resultado_dados.push(procesar_dado(dado,valor_mock)) 
+    end
+    return @resultado_dados
+  end
+  
+  def procesar_dado dado, valor_mock
+    valor_dado = dado.obtener_valor(valor_mock)
     contar_resistencia(valor_dado)
     contar_cerebros(valor_dado)
     actualizar_estado
     return dado.traducir(valor_dado)
   end
   
-  def obtener_dados
-  	return Dado.new 1
-  end
-  
-  def obtener_valor_dado dado
-  	return dado.obtener_valor
-  end
+  def obtener_dados  
+  	return [Dado.new(0),Dado.new(1)]
+  end   
   
 	def contar_resistencia valor_dado
 	  if valor_dado == 4 || valor_dado == 1

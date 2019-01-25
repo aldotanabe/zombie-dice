@@ -15,7 +15,7 @@ get '/juego' do
 end
 
 post '/juego' do
-	@resultado = @@zombie.tirar_dado
+	@resultado = @@zombie.tirar_dados
 	@resistencia = @@zombie.resistencia
 	@cerebros = @@zombie.cerebros
 	@es_activo = @@zombie.es_activo
