@@ -1,5 +1,5 @@
 require "./lib/zombie_dice.rb"
-
+require "./lib/dado.rb"
 describe "Juego Zombie Dice" do
   it "al iniciar tienes 3 resistencia" do
 		zombie = ZombieDice.new
@@ -14,24 +14,6 @@ describe "Juego Zombie Dice" do
 		zombie = ZombieDice.new
 		 
 		expect(zombie.es_activo).to eq true 
-	end
-	
-	it "obtener valor del dado y retorna un valor de 1 a 6" do
-		zombie = ZombieDice.new
-		
-		resultado = zombie.obtener_valor_dado
-		
-		expect(resultado).to be > 0
-		expect(resultado).to be < 7	
-	end
-	
-	
-	it "traducir valor del dado" do
-		zombie = ZombieDice.new
-		
-		resultado = zombie.traducir 4
-		
-		expect(resultado).to eq  "bala"
 	end
 	
 	it "calcular vida al sacar una bala" do

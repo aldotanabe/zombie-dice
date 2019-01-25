@@ -1,3 +1,5 @@
+require "./lib/dado.rb"
+
 class ZombieDice
 	def initialize
 		@resistencia = 3
@@ -23,18 +25,22 @@ class ZombieDice
 	end  
  
   def tirar_dado valor_mock = 0
-     valor_dado =  valor_mock == 0 ? obtener_valor_dado : valor_mock      
-     contar_resistencia(valor_dado)
-     contar_cerebros(valor_dado)
-     actualizar_estado
-     return traducir(valor_dado)
+  	dado = obtener_dados
+    valor_dado =  valor_mock == 0 ? obtener_valor_dado(dado) : valor_mock      
+    contar_resistencia(valor_dado)
+    contar_cerebros(valor_dado)
+    actualizar_estado
+    return dado.traducir(valor_dado)
   end
- 
-	def obtener_valor_dado
-		random = Random.new 
-		return random.rand(1..6) 
-	end
-	
+  
+  def obtener_dados
+  	return Dado.new 1
+  end
+  
+  def obtener_valor_dado dado
+  	return dado.obtener_valor
+  end
+  
 	def contar_resistencia valor_dado
 	  if valor_dado == 4 || valor_dado == 1
 			@resistencia -= 1
@@ -53,12 +59,7 @@ class ZombieDice
 			@cerebros += 1
 		end 
 	end
-	 
-	def traducir valor_dado
-	 resultados = ['bala', 'cerebro', 'huellita', 'bala', 'cerebro', 'huellita']  
-	 return resultados[valor_dado -1] 		
-	end
-	 
+
 	def traer_mensaje 
 	  @cerebros == @cantidad_cerebros 
 	end 
