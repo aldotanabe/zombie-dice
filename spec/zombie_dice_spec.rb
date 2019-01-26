@@ -83,7 +83,7 @@ describe "Juego Zombie Dice" do
 		expect(zombie.es_activo).to eq false 
 	end
 	
-	it "al llegar a 5 cerebros deberia estar inactivo" do
+	it "al llegar a 10 cerebros deberia estar inactivo" do
 	  zombie = ZombieDice.new
 		indice_cerebro = 2
 		indice_verde = 1
@@ -92,6 +92,11 @@ describe "Juego Zombie Dice" do
 		zombie.tirar_dados(indice_cerebro,indice_verde) 
 		zombie.tirar_dados(indice_cerebro,indice_verde) 
 		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde)
 				
 		expect(zombie.es_activo).to eq false 
 	end
@@ -104,7 +109,12 @@ describe "Juego Zombie Dice" do
 		zombie.tirar_dados(indice_cerebro,indice_verde) 
 		zombie.tirar_dados(indice_cerebro,indice_verde) 
 		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde)
 		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde)
 		
 		expect(zombie.resultado_juego).to eq "Ganaste"
 	end	

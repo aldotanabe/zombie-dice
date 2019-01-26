@@ -5,7 +5,7 @@ class ZombieDice
 		@resistencia = 3
 		@cerebros = 0
 		@es_activo = true
-		@cantidad_cerebros = 5
+		@cantidad_cerebros = 10
 		@resultado_dados = [] 
 		@mensajes = {"bala" => "Auch..tu resistencia disminuye.",
 		            "huellita" => "Uy...se escapo.",
@@ -57,6 +57,10 @@ class ZombieDice
 	def contar_resistencia icono
 	  if icono == "bala"
 			@resistencia -= 1
+		end
+		
+		if @resistencia < 0
+			@resistencia = 0
 		end 
 	end
 	 
@@ -70,7 +74,11 @@ class ZombieDice
 	def contar_cerebros icono
 	  if icono == "cerebro"
 			@cerebros += 1
-		end 
+		end
+		
+		if @cerebros > @cantidad_cerebros
+			@cerebros = @cantidad_cerebros
+		end
 	end
  	
 	def resultado_tiro
