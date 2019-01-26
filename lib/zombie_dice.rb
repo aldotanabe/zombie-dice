@@ -38,19 +38,19 @@ class ZombieDice
   end
   
   def procesar_dado dado, valor_mock
-    valor_dado = dado.obtener_valor(valor_mock)
-    contar_resistencia(valor_dado)
-    contar_cerebros(valor_dado)
+    resultado = dado.lanzar(valor_mock)
+    contar_resistencia(resultado["icono"])
+    contar_cerebros(resultado["icono"])
     actualizar_estado
-    return dado.traducir(valor_dado)
+    return resultado
   end
   
   def obtener_dados  
-  	return [Dado.new(0),Dado.new(1)]
+  	return [Dado.new,Dado.new]
   end   
   
-	def contar_resistencia valor_dado
-	  if valor_dado == 4 || valor_dado == 1
+	def contar_resistencia icono
+	  if icono == "bala"
 			@resistencia -= 1
 		end 
 	end
@@ -62,8 +62,8 @@ class ZombieDice
 		end						 
 	end
 	
-	def contar_cerebros valor_dado
-	  if valor_dado == 2 || valor_dado == 5
+	def contar_cerebros icono
+	  if icono == "cerebro"
 			@cerebros += 1
 		end 
 	end

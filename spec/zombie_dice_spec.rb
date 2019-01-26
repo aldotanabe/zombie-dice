@@ -1,6 +1,7 @@
 require "./lib/zombie_dice.rb"
 require "./lib/dado.rb"
 describe "Juego Zombie Dice" do
+
   it "al iniciar tienes 3 resistencia" do
 		zombie = ZombieDice.new
 		
@@ -17,8 +18,8 @@ describe "Juego Zombie Dice" do
 	end
 	
 	it "calcular resistencia al sacar dos balas" do
-		zombie = ZombieDice.new
-		indice_bala = 4
+		zombie = ZombieDice.new 
+		indice_bala = 1
 		zombie.tirar_dados(indice_bala)  
 		
 		expect(zombie.resistencia).to eq 1  
@@ -42,7 +43,7 @@ describe "Juego Zombie Dice" do
 	
 	it "calcular cerebros al sacar dos balas" do
 		zombie = ZombieDice.new
-		indice_bala = 4
+		indice_bala = 1
 		zombie.tirar_dados(indice_bala)  
 		
 		expect(zombie.cerebros).to eq 0  
