@@ -16,6 +16,7 @@ end
 
 post '/juego' do
 	@dados = @@zombie.tirar_dados
+	puts @dados.to_s
 	@resistencia = @@zombie.resistencia
 	@cerebros = @@zombie.cerebros
 	@es_activo = @@zombie.es_activo

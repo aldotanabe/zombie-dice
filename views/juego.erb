@@ -31,7 +31,7 @@
 			
 			<% @dados.each do |dado| %>
 			<div class="resultado">
-				<img class="icono" src="<%= "images/#{dado}.png" %>">
+				<img qa="icono" class="icono has-border <%= dado['color'] %>" src="<%= "images/#{dado['icono']}.png" %>">
 			</div>
 			<% end %>
 		</div>

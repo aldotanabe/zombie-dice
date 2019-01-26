@@ -36,7 +36,7 @@ Then(/^los resultados se muestran$/) do
 end
 
 Then(/^veo íconos asociados a los resultados$/) do
-  last_response.should have_xpath("//img[@class=\"icono\"]", :count => 2)
+  last_response.should have_xpath("//img[@qa=\"icono\"]", :count => 2)
 end
 
 

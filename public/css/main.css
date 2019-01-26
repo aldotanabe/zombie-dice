@@ -125,6 +125,25 @@ textarea {
     display: none !important;
 }
 
+.has-border {
+	border-width: 10px;
+	border-style: dashed;
+	border-radius: 5px; 
+}
+
+.has-border.verde {
+	border-color: green;
+}
+
+.has-border.rojo {
+	border-color: red;
+}
+
+.has-border.amarillo {
+	border-color: yellow;
+}
+
+
 /*
  * Hide only visually, but have it available for screen readers:
  * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
@@ -340,9 +359,17 @@ body.home {
 .resultado {
 	min-height: 170px;
 	text-align: center;
-	margin-top: 30px;
 	flex-grow: 1;
+	
 }
+
+.resultado img {
+	display: inline-block;
+	margin-top: 20px;
+	padding: 50px;
+
+}
+
 
 .resultado-mensaje {
 	margin: 20px auto;
