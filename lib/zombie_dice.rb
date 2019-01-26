@@ -87,8 +87,6 @@ class ZombieDice
 	
 		iconos = @resultado_dados.map {|x| x["icono"]}
 		iconos_diferentes = iconos.uniq
-		#tiro2 = @resultado_dados[1]["icono"]
-		#tiro3 = @resultado_dados[2]["icono"]
 		
 		mensajes = ""
 		
@@ -97,13 +95,5 @@ class ZombieDice
 		end
 		
 		return mensajes
-		
-		#if tiro1 == tiro2 && tiro2 == tiro3
-		 #	 return @mensajes[tiro1]
-	  #end
-	  
-	  #if tiro1 != tiro2 && tiro2 != tiro3 && tiro1 != tiro3
-	  	#return @mensajes[tiro1] +"<br>"+ @mensajes[tiro2] +"<br>"+ @mensajes[tiro3]
-	  #end
 	end 
 end

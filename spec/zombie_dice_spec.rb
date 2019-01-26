@@ -58,7 +58,7 @@ describe "Juego Zombie Dice" do
 		zombie = ZombieDice.new
 		indice_cerebro = 2
 		indice_verde = 1
-		zombie.tirar_dados(indice_cerebro) 
+		zombie.tirar_dados(indice_cerebro, indice_verde) 
 		
 		expect(zombie.cerebros).to eq 3
 	end

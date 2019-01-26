@@ -3,8 +3,8 @@ class Dado
 	def initialize color_mock = 0
 		@tipo_dado = obtener_color_dado(color_mock)
 		dado_verde = ["bala", "cerebro", "huellita", "cerebro", "cerebro", "huellita"]
-		dado_amarillo = ["bala", "cerebro", "huellita", "bala", "cerebro", "huellita"]
-		dado_rojo = ["bala", "cerebro", "bala", "bala", "huellita", "bala"]
+		dado_amarillo = ["cerebro", "huellita", "cerebro", "huellita", "cerebro", "huellita"]
+		dado_rojo = ["bala", "cerebro", "bala", "cerebro", "huellita", "bala"]
 		@stack_dados = {1 => dado_verde,
 										2 => dado_amarillo,
 										3 => dado_rojo}
@@ -20,7 +20,7 @@ class Dado
 	def obtener_color_dado valor_mock = 0
 		if valor_mock == 0
 			random = Random.new
-			return random.rand(1..2)
+			return random.rand(1..3)
 		end
 		return valor_mock
 	end
