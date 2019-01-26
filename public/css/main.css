@@ -104,7 +104,10 @@ textarea {
 }
 
 
-
+audio {
+	visibility: hidden;
+}
+ 
 
 
 
