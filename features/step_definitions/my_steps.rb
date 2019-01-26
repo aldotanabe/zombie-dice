@@ -32,11 +32,11 @@ When(/^doy click en "(.*?)"$/) do |boton|
 end
 
 Then(/^los resultados se muestran$/) do
-  last_response.should have_xpath("//div[@class=\"resultado\"]", :count => 2)
+  last_response.should have_xpath("//div[@class=\"resultado\"]", :count => 3)
 end
 
 Then(/^veo íconos asociados a los resultados$/) do
-  last_response.should have_xpath("//img[@qa=\"icono\"]", :count => 2)
+  last_response.should have_xpath("//img[@qa=\"icono\"]", :count => 3)
 end
 
 

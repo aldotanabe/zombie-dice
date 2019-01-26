@@ -17,17 +17,17 @@ describe "Juego Zombie Dice" do
 		expect(zombie.es_activo).to eq true 
 	end
 	
-	it "calcular resistencia al sacar dos balas" do
+	it "calcular resistencia al sacar tres balas" do
 		zombie = ZombieDice.new 
 		indice_bala = 1
 		indice_verde = 1
 
 		zombie.tirar_dados(indice_bala,indice_verde)  
 		
-		expect(zombie.resistencia).to eq 1  
+		expect(zombie.resistencia).to eq 0 
 	end
 	
-	it "calcular resistencia al sacar dos cerebros" do
+	it "calcular resistencia al sacar tres cerebros" do
 		zombie = ZombieDice.new
 		indice_cerebro = 2
 		indice_verde = 1
@@ -54,13 +54,13 @@ describe "Juego Zombie Dice" do
 		expect(zombie.cerebros).to eq 0  
 	end
 	
-	it "calcular cerebros al sacar dos cerebros" do
+	it "calcular cerebros al sacar tres cerebros" do
 		zombie = ZombieDice.new
 		indice_cerebro = 2
 		indice_verde = 1
 		zombie.tirar_dados(indice_cerebro) 
 		
-		expect(zombie.cerebros).to eq 2
+		expect(zombie.cerebros).to eq 3
 	end
 	
 	it "calcular cerebros al sacar dos huellitas" do

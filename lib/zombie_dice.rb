@@ -51,6 +51,8 @@ class ZombieDice
  		dados.push(dado1)
  		dado2 = color_mock == 0 ? Dado.new : Dado.new(color_mock) 
  		dados.push(dado2)
+ 		dado3 = color_mock == 0 ? Dado.new : Dado.new(color_mock) 
+ 		dados.push(dado3)
   	return dados
   end   
   
@@ -82,13 +84,26 @@ class ZombieDice
 	end
  	
 	def resultado_tiro
-		tiro1 = @resultado_dados[0]["icono"]
-		tiro2 = @resultado_dados[1]["icono"]
+	
+		iconos = @resultado_dados.map {|x| x["icono"]}
+		iconos_diferentes = iconos.uniq
+		#tiro2 = @resultado_dados[1]["icono"]
+		#tiro3 = @resultado_dados[2]["icono"]
 		
-		if tiro1 == tiro2
-		 	 return @mensajes[tiro1]
-	  end
-	  return @mensajes[tiro1] +"<br>"+ @mensajes[tiro2]
-	end
-		 
+		mensajes = ""
+		
+		iconos_diferentes.each do |icono|
+			mensajes += @mensajes[icono] + "<br>"
+		end
+		
+		return mensajes
+		
+		#if tiro1 == tiro2 && tiro2 == tiro3
+		 #	 return @mensajes[tiro1]
+	  #end
+	  
+	  #if tiro1 != tiro2 && tiro2 != tiro3 && tiro1 != tiro3
+	  	#return @mensajes[tiro1] +"<br>"+ @mensajes[tiro2] +"<br>"+ @mensajes[tiro3]
+	  #end
+	end 
 end

@@ -4,10 +4,13 @@ class Dado
 		@tipo_dado = obtener_color_dado(color_mock)
 		dado_verde = ["bala", "cerebro", "huellita", "cerebro", "cerebro", "huellita"]
 		dado_amarillo = ["bala", "cerebro", "huellita", "bala", "cerebro", "huellita"]
+		dado_rojo = ["bala", "cerebro", "bala", "bala", "huellita", "bala"]
 		@stack_dados = {1 => dado_verde,
-										2 => dado_amarillo}
+										2 => dado_amarillo,
+										3 => dado_rojo}
 		@stack_colores = {1 => "verde",
-											2 => "amarillo"}
+											2 => "amarillo",
+											3 => "rojo"}
 	end
 	
 	def valores
