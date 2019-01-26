@@ -13,12 +13,12 @@ Scenario:
 Scenario:
 	Given voy a la página del juego
 	When doy click en "Tirar dados"
-	Then el resultado se muestra
+	Then los resultados se muestran
 	
 Scenario:
 	Given voy a la página del juego
 	When doy click en "Tirar dados"
-	Then veo un ícono asociado al resultado
+	Then veo íconos asociados a los resultados
 	
 #Scenario:
 	#Given voy a la página del juego

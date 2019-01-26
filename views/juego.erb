@@ -25,17 +25,19 @@
 		<% end %>
 
 		</form>
-		<% if @dados %>
-		<div class="resultado">
-			<img class="icono" src="<%= "images/#{@dados[0]}.png" %>">
-			<div class="resultado-mensaje"><%= @resultado_tiro %></div>
-		</div>
 
-		<div class="resultado">
-			<img class="icono" src="<%= "images/#{@dados[1]}.png" %>">
-			<div class="resultado-mensaje"><%= @resultado_tiro %></div>
+		<% if @dados %>
+		<div class="dados-container">
+			
+			<% @dados.each do |dado| %>
+			<div class="resultado">
+				<img class="icono" src="<%= "images/#{dado}.png" %>">
+			</div>
+			<% end %>
 		</div>
 		<% end %>
+
+		<div class="resultado-mensaje"><%= @resultado_tiro %></div>
 
 		<div class="puntaje">
 		

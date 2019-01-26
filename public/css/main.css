@@ -333,14 +333,21 @@ body.home {
 	margin: 0px auto;
 }
 
+.dados-container {
+	display: flex;
+}
+
 .resultado {
 	min-height: 170px;
 	text-align: center;
 	margin-top: 30px;
+	flex-grow: 1;
 }
 
 .resultado-mensaje {
-	margin-top: 10px;
+	margin: 20px auto;
+	width: 100%;
+	text-align: center;
 }
 .btn-tirar-dados {
 	width: 40%;
@@ -363,6 +370,7 @@ body.home {
 	border: 2px solid green;
 	position: relative;
 	margin-bottom: 20px;
+	max-width: 100%;
 }
 
 .resistencia-puntos {
@@ -382,6 +390,7 @@ body.home {
 	height: 30px;
 	border: 2px solid #f2abba;
 	position: relative;
+	max-width: 100%;
 }
 
 .cerebros-puntos {
@@ -394,4 +403,14 @@ body.home {
 	top: 0;
 	right: -120px;
 	color: #f2abba;
+}
+
+.resultado-juego {
+	text-align: center;
+}
+
+.resultado-juego h2 {
+	font-size: 44px;
+	text-transform: uppercase;
+	color: #666;
 }
