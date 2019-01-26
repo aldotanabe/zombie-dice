@@ -65,6 +65,12 @@
 				<input type="button" value="Volver a jugar!" />
 			</a>
 		</div>
+		<% if @resultado_juego == 'Perdiste' %>
+			<audio src="https://vignette.wikia.nocookie.net/fallout/images/9/9f/Double-barrel_shotgun.ogg/revision/latest?cb=20160825042122" autoplay="" controls=""></audio>
+		<% end %>
+		<% if @resultado_juego == 'Ganaste' %>
+			<audio autoplay src="https://upload.wikimedia.org/wikipedia/commons/8/84/Evillaugh.ogg"></audio>
+		<% end %> 
 		<% end %>
 	</div>
 </body>
