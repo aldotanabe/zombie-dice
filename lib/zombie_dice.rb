@@ -7,7 +7,7 @@ class ZombieDice
 		@es_activo = true
 		@cantidad_cerebros = 5
 		@resultado_dados = []
-		@mensajes = {"bala" => "Has recibibo una bala...auch. Tu resistencia disminuye en 1",
+		@mensajes = {"bala" => "Has recibibo una bala...auch. Tu resistencia disminuye",
 		            "huellita" => "Uy...se te escapo el humano",
 		            "cerebro" => "Te has comido un cerebro...yummy"}
 	end
@@ -30,6 +30,7 @@ class ZombieDice
  
   def tirar_dados valor_mock = 0
   	dados = obtener_dados
+  	@resultado_dados.clear
     dados.each do |dado|
       @resultado_dados.push(procesar_dado(dado,valor_mock)) 
     end
@@ -67,8 +68,14 @@ class ZombieDice
 		end 
 	end
  	
-	def resultado_tiro tiro
-	  return @mensajes[tiro]
+	def resultado_tiro
+		tiro1 = @resultado_dados[0]
+		tiro2 = @resultado_dados[1]
+		
+		if tiro1 != tiro2
+		 	mensaje = "#{ @mensajes[tiro1] } y #{ @mensajes[tiro2] }"
+	  end
+	  return mensaje
 	end
-	 
+		 
 end

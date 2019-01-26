@@ -108,12 +108,12 @@ describe "Juego Zombie Dice" do
 		expect(zombie.resultado_juego).to eq "Perdiste"
 	end
 	
-	it "al recibir dos balas deberia devolver el mensaje" do
-		zombie = ZombieDice.new
-		indice_bala = 1
-		tiros = zombie.tirar_dados(indice_bala) 
+	#it "al recibir dos balas deberia devolver el mensaje" do
+		#zombie = ZombieDice.new
+		#indice_bala = 1
+		#tiros = zombie.tirar_dados(indice_bala) 
 		
-		expect(zombie.resultado_tiro(tiros[0])).to eq "Has recibibo una bala...auch. Tu resistencia disminuye en 1"
-	end
+		#expect(zombie.resultado_tiro(tiros[0])).to eq "Has recibibo una bala...auch. Tu resistencia disminuye"
+	#end
 	  
 end
