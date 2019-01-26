@@ -15,11 +15,11 @@ get '/juego' do
 end
 
 post '/juego' do
-	@resultado = @@zombie.tirar_dados
+	@dados = @@zombie.tirar_dados
 	@resistencia = @@zombie.resistencia
 	@cerebros = @@zombie.cerebros
 	@es_activo = @@zombie.es_activo
 	@resultado_juego = @@zombie.resultado_juego
-	@resultado_tiro = @@zombie.resultado_tiro(@resultado)
+	@resultado_tiro = "mock" #@@zombie.resultado_tiro
 	erb :juego
 end

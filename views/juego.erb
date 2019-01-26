@@ -25,9 +25,14 @@
 		<% end %>
 
 		</form>
-		<% if @resultado %>
+		<% if @dados %>
 		<div class="resultado">
-			<img class="icono" src="<%= "images/#{@resultado}.png" %>">
+			<img class="icono" src="<%= "images/#{@dados[0]}.png" %>">
+			<div class="resultado-mensaje"><%= @resultado_tiro %></div>
+		</div>
+
+		<div class="resultado">
+			<img class="icono" src="<%= "images/#{@dados[1]}.png" %>">
 			<div class="resultado-mensaje"><%= @resultado_tiro %></div>
 		</div>
 		<% end %>
