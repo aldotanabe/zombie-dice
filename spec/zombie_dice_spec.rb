@@ -20,7 +20,9 @@ describe "Juego Zombie Dice" do
 	it "calcular resistencia al sacar dos balas" do
 		zombie = ZombieDice.new 
 		indice_bala = 1
-		zombie.tirar_dados(indice_bala)  
+		indice_verde = 1
+
+		zombie.tirar_dados(indice_bala,indice_verde)  
 		
 		expect(zombie.resistencia).to eq 1  
 	end
@@ -28,7 +30,8 @@ describe "Juego Zombie Dice" do
 	it "calcular resistencia al sacar dos cerebros" do
 		zombie = ZombieDice.new
 		indice_cerebro = 2
-		zombie.tirar_dados(indice_cerebro) 
+		indice_verde = 1
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
 		
 		expect(zombie.resistencia).to eq 3
 	end
@@ -36,7 +39,8 @@ describe "Juego Zombie Dice" do
 	it "calcular resistencia al sacar dos huellitas" do
 		zombie = ZombieDice.new
 		indice_huellita = 3
-		zombie.tirar_dados(indice_huellita) 
+		indice_verde = 1
+		zombie.tirar_dados(indice_huellita,indice_verde) 
 		
 		expect(zombie.resistencia).to eq 3 
 	end
@@ -44,7 +48,8 @@ describe "Juego Zombie Dice" do
 	it "calcular cerebros al sacar dos balas" do
 		zombie = ZombieDice.new
 		indice_bala = 1
-		zombie.tirar_dados(indice_bala)  
+		indice_verde = 1
+		zombie.tirar_dados(indice_bala,indice_verde)  
 		
 		expect(zombie.cerebros).to eq 0  
 	end
@@ -52,6 +57,7 @@ describe "Juego Zombie Dice" do
 	it "calcular cerebros al sacar dos cerebros" do
 		zombie = ZombieDice.new
 		indice_cerebro = 2
+		indice_verde = 1
 		zombie.tirar_dados(indice_cerebro) 
 		
 		expect(zombie.cerebros).to eq 2
@@ -60,7 +66,8 @@ describe "Juego Zombie Dice" do
 	it "calcular cerebros al sacar dos huellitas" do
 		zombie = ZombieDice.new
 		indice_huellita = 3
-		zombie.tirar_dados(indice_huellita) 
+		indice_verde = 1
+		zombie.tirar_dados(indice_huellita,indice_verde) 
 		
 		expect(zombie.cerebros).to eq 0 
 	end
@@ -68,9 +75,10 @@ describe "Juego Zombie Dice" do
 	it "al llegar a 0 resistencia esta inactivo" do
 		zombie = ZombieDice.new
 		indice_bala = 1
-		zombie.tirar_dados(indice_bala) 
-		zombie.tirar_dados(indice_bala) 
-		zombie.tirar_dados(indice_bala) 
+		indice_verde = 1
+		zombie.tirar_dados(indice_bala,indice_verde) 
+		zombie.tirar_dados(indice_bala,indice_verde) 
+		zombie.tirar_dados(indice_bala,indice_verde) 
 		
 		expect(zombie.es_activo).to eq false 
 	end
@@ -78,11 +86,12 @@ describe "Juego Zombie Dice" do
 	it "al llegar a 5 cerebros deberia estar inactivo" do
 	  zombie = ZombieDice.new
 		indice_cerebro = 2
-		zombie.tirar_dados(indice_cerebro) 
-		zombie.tirar_dados(indice_cerebro) 
-		zombie.tirar_dados(indice_cerebro) 
-		zombie.tirar_dados(indice_cerebro) 
-		zombie.tirar_dados(indice_cerebro) 
+		indice_verde = 1
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
 				
 		expect(zombie.es_activo).to eq false 
 	end
@@ -90,11 +99,12 @@ describe "Juego Zombie Dice" do
 	it "al ganar deberia ver mensaje ganaste" do
 		zombie = ZombieDice.new
 		indice_cerebro = 2
-		zombie.tirar_dados(indice_cerebro) 
-		zombie.tirar_dados(indice_cerebro) 
-		zombie.tirar_dados(indice_cerebro) 
-		zombie.tirar_dados(indice_cerebro) 
-		zombie.tirar_dados(indice_cerebro) 
+		indice_verde = 1
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
+		zombie.tirar_dados(indice_cerebro,indice_verde) 
 		
 		expect(zombie.resultado_juego).to eq "Ganaste"
 	end	
@@ -102,19 +112,21 @@ describe "Juego Zombie Dice" do
 	it "al perder deberia ver mensaje perdiste" do
 		zombie = ZombieDice.new
 		indice_bala = 1
-		zombie.tirar_dados(indice_bala) 
-		zombie.tirar_dados(indice_bala) 
-		zombie.tirar_dados(indice_bala) 	
+		indice_verde = 1
+		zombie.tirar_dados(indice_bala,indice_verde) 
+		zombie.tirar_dados(indice_bala,indice_verde) 
+		zombie.tirar_dados(indice_bala,indice_verde) 	
 		
 		expect(zombie.resultado_juego).to eq "Perdiste"
 	end
 	
-	#it "al recibir dos balas deberia devolver el mensaje" do
-		#zombie = ZombieDice.new
-		#indice_bala = 1
-		#tiros = zombie.tirar_dados(indice_bala) 
+	it "al recibir dos balas deberia devolver el mensaje" do
+		zombie = ZombieDice.new
+		indice_bala = 1
+		indice_verde = 1
+		tiros = zombie.tirar_dados(indice_bala,indice_verde) 
 		
-		#expect(zombie.resultado_tiro(tiros[0])).to eq "Has recibibo una bala...auch. Tu resistencia disminuye"
-	#end
+		expect(zombie.resultado_tiro).not_to be ""  
+	end
 	  
 end

@@ -6,10 +6,10 @@ class ZombieDice
 		@cerebros = 0
 		@es_activo = true
 		@cantidad_cerebros = 5
-		@resultado_dados = []
-		@mensajes = {"bala" => "Has recibibo una bala...auch. Tu resistencia disminuye",
-		            "huellita" => "Uy...se te escapo el humano",
-		            "cerebro" => "Te has comido un cerebro...yummy"}
+		@resultado_dados = [] 
+		@mensajes = {"bala" => "Auch..tu resistencia disminuye.",
+		            "huellita" => "Uy...se escapo.",
+		            "cerebro" => "Cerebro...yummy."}
 	end
 
 	def resistencia
@@ -28,8 +28,8 @@ class ZombieDice
 	  return @resultado_juego
 	end  
  
-  def tirar_dados valor_mock = 0
-  	dados = obtener_dados
+  def tirar_dados valor_mock = 0, color_mock = 0
+  	dados = obtener_dados(color_mock)
   	@resultado_dados.clear
     dados.each do |dado|
       @resultado_dados.push(procesar_dado(dado,valor_mock)) 
@@ -45,8 +45,13 @@ class ZombieDice
     return resultado
   end
   
-  def obtener_dados  
-  	return [Dado.new,Dado.new]
+  def obtener_dados color_mock
+    dados = []
+    dado1 = color_mock == 0 ? Dado.new : Dado.new(color_mock) 		
+ 		dados.push(dado1)
+ 		dado2 = color_mock == 0 ? Dado.new : Dado.new(color_mock) 
+ 		dados.push(dado2)
+  	return dados
   end   
   
 	def contar_resistencia icono
@@ -69,13 +74,13 @@ class ZombieDice
 	end
  	
 	def resultado_tiro
-		tiro1 = @resultado_dados[0]
-		tiro2 = @resultado_dados[1]
+		tiro1 = @resultado_dados[0]["icono"]
+		tiro2 = @resultado_dados[1]["icono"]
 		
-		if tiro1 != tiro2
-		 	mensaje = "#{ @mensajes[tiro1] } y #{ @mensajes[tiro2] }"
+		if tiro1 == tiro2
+		 	 return @mensajes[tiro1]
 	  end
-	  return mensaje
+	  return @mensajes[tiro1] +"<br>"+ @mensajes[tiro2]
 	end
 		 
 end

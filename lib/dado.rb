@@ -1,6 +1,6 @@
 class Dado
 
-	def initialize color_mock = 1
+	def initialize color_mock = 0
 		@tipo_dado = obtener_color_dado(color_mock)
 		dado_verde = ["bala", "cerebro", "huellita", "cerebro", "cerebro", "huellita"]
 		dado_amarillo = ["bala", "cerebro", "huellita", "bala", "cerebro", "huellita"]
