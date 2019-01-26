@@ -60,6 +60,9 @@
 		<% if !@es_activo %>
 		<div class="resultado-juego">
 			<h2><%= @resultado_juego %></h2>
+			<a href='/juego' class="volver-a-jugar">
+				<input type="button" value="Volver a jugar!" />
+			</a>
 		</div>
 		<% end %>
 	</div>

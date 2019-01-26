@@ -441,3 +441,16 @@ body.home {
 	text-transform: uppercase;
 	color: #666;
 }
+
+.volver-a-jugar {
+	text-decoration: none;
+}
+
+.volver-a-jugar input[type="button"] {
+	font-size: 22px;
+	width: 260px;
+	height: 50px;
+	background-color: #f6f6fb;
+	cursor: pointer;
+	text-transform: uppercase;
+}
