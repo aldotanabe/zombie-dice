@@ -24,7 +24,7 @@ Then(/^tengo 3 resistencia$/) do
 end
 
 Then(/^tengo 0 cerebros$/) do
-  last_response.body.should =~ /0 \/ 5 cerebros/m 
+  last_response.body.should =~ /0 \/ 10 cerebros/m 
 end
 
 When(/^doy click en "(.*?)"$/) do |boton|

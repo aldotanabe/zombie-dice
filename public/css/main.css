@@ -97,13 +97,11 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
-
-
-
-
-
-
+@font-face {
+    font-family: Baker;
+    src: url(../fonts/baker.otf);
+    font-weight:400;
+}
 
 
 
@@ -343,7 +341,9 @@ body.home {
 }
 
 .instrucciones__title {
+	font-family: Baker, sans-serif;
 	color: white;
+	font-size: 50px;
 }
 
 
@@ -372,19 +372,25 @@ body.home {
 
 
 .resultado-mensaje {
+	font-family: Baker, sans-serif;
 	margin: 20px auto;
 	width: 100%;
 	text-align: center;
+	font-size: 35px;
+	color: #646565;
+	letter-spacing: 4px;
 }
 .btn-tirar-dados {
+	font-family: Baker, sans-serif;
 	width: 40%;
-	height: 50px;
+	height: 85px;
 	background-color: #666;
 	color: white;
-	border-radius: 20px;
+	border-radius: 10px;
 	margin: 20px auto;
 	display: block;
 	cursor: pointer;
+	font-size: 50px;
 }
 
 .btn-tirar-dados:hover {
@@ -428,7 +434,7 @@ body.home {
 .cerebros-contador {
 	position: absolute;
 	top: 0;
-	right: -120px;
+	right: -130px;
 	color: #f2abba;
 }
 
@@ -437,9 +443,11 @@ body.home {
 }
 
 .resultado-juego h2 {
-	font-size: 44px;
+	font-family: Baker, sans-serif;
+	font-size: 58px;
 	text-transform: uppercase;
 	color: #666;
+	letter-spacing: 30px;
 }
 
 .volver-a-jugar {
@@ -447,10 +455,15 @@ body.home {
 }
 
 .volver-a-jugar input[type="button"] {
-	font-size: 22px;
 	width: 260px;
 	height: 50px;
 	background-color: #f6f6fb;
 	cursor: pointer;
 	text-transform: uppercase;
+	font-family: Baker;
+	font-size: 50px;
+	background: none;
+	border: none;
+	text-decoration: underline;
+	color: red;
 }
